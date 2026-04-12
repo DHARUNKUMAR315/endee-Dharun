@@ -1,0 +1,17 @@
+# Ignore original C++ database source code from GitHub Language Statistics
+# This forces GitHub to showcase Python (our AI Agent) as the primary language!
+
+src/** linguist-vendored
+tests/** linguist-vendored
+third_party/** linguist-vendored
+infra/** linguist-vendored
+docs/** linguist-vendored
+
+*.cpp linguist-vendored
+*.h linguist-vendored
+*.hpp linguist-vendored
+*.cc linguist-vendored
+*.c linguist-vendored
+CMakeLists.txt linguist-vendored
+*.cmake linguist-vendored
+*.sh linguist-vendored
