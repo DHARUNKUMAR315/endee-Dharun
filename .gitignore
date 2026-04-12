@@ -30,3 +30,17 @@ frontend/*
 
 # DS Store
 .DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# NodeJS / UI Frameworks
+node_modules/
+dist/
+.next/
+
+# Docker / Database Mounts
+endee-data/

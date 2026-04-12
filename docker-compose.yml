@@ -1,6 +1,6 @@
 services:
   endee-oss:
-    image: endee-oss:latest
+    image: endeeio/endee-server:latest
     container_name: endee-oss
     ports:
       - "8080:8080"
@@ -23,6 +23,19 @@ services:
       NDD_AUTH_TOKEN: "" # Replace with your auth token
     volumes:
       - endee-data:/data
+    restart: unless-stopped
+
+  ticket-agent:
+    build:
+      context: ./demo/ticket_agent
+      dockerfile: Dockerfile
+    container_name: ticket-agent
+    ports:
+      - "8504:8501"
+    environment:
+      - ENDEE_HOST=http://endee-oss:8080
+    depends_on:
+      - endee-oss
     restart: unless-stopped
 
 volumes:
