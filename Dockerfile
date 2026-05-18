@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Ensure start script is executable
 RUN chmod +x /app/start_single.sh
 
-# Expose Render default port (though Render passes PORT)
-EXPOSE 10000
+# Expose port (7860 for Hugging Face)
+EXPOSE 7860
 
 CMD ["/app/start_single.sh"]
