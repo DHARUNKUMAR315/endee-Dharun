@@ -16,9 +16,9 @@ WORKDIR /app/demo/ticket_agent
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Ensure start script is executable
-RUN chmod +x /app/start_hf.sh
+RUN chmod +x /app/start_single.sh
 
-# Hugging Face Spaces required port
-EXPOSE 7860
+# Expose Render default port (though Render passes PORT)
+EXPOSE 10000
 
-CMD ["/app/start_hf.sh"]
+CMD ["/app/start_single.sh"]

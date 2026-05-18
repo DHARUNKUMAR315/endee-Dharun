@@ -1,26 +1,10 @@
 services:
-  - type: pserv
-    name: endee-oss
-    env: image
-    image:
-      url: docker.io/endeeio/endee-server:latest
-    disk:
-      name: endee-data
-      mountPath: /data
-      sizeGB: 1
-    envVars:
-      - key: NDD_NUM_THREADS
-        value: "0"
-      - key: NDD_AUTH_TOKEN
-        value: ""
-
   - type: web
-    name: ticket-agent
+    name: ticket-agent-combo
     env: docker
-    dockerfilePath: demo/ticket_agent/Dockerfile
-    dockerContext: demo/ticket_agent
+    plan: free
+    dockerfilePath: Dockerfile
+    dockerContext: .
     envVars:
-      - key: ENDEE_HOST
-        value: http://endee-oss:8080
       - key: PORT
-        value: "8501"
+        value: "10000"
