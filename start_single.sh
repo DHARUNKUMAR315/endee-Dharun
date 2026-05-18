@@ -19,9 +19,9 @@ sleep 10
 echo "Populating Endee database with initial data..."
 cd /app/demo/ticket_agent
 export ENDEE_HOST=http://localhost:8080
-python data_pipeline.py
+python3 data_pipeline.py
 
 echo "Starting Streamlit App..."
 # Use the PORT environment variable provided by Render, default to 7860 for Hugging Face Spaces
 PORT="${PORT:-7860}"
-streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
+python3 -m streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
