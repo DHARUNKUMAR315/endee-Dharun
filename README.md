@@ -1,3 +1,12 @@
+---
+title: AI Ticket Router
+emoji: 🎟️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # AI Powered Intelligent Ticket Routing & Resolution Agent
 
 A production-ready, Full-Stack Agentic AI Support Assistant that intelligently routes, escalates, and resolves IT Service issues using Semantic Vector Search. Built natively on top of the **Endee C++ Matrix Engine** running effortlessly inside Docker. 
