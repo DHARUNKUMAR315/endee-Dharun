@@ -1,9 +1,17 @@
 #!/bin/bash
 set -e
 
-echo "Starting Endee Database Server..."
+echo "Finding and starting Endee Database Server..."
 cd /app
-./run.sh &
+BINARY_PATH=$(command -v ndd || command -v ndd-avx2 || command -v ndd-avx512 || command -v endee-server || find /usr /opt /app -name "ndd*" -type f -executable 2>/dev/null | head -n 1)
+if [ -z "$BINARY_PATH" ]; then
+    echo "Could not find Endee binary!"
+    # Fallback just in case
+    BINARY_PATH="ndd"
+fi
+echo "Running $BINARY_PATH..."
+export NDD_DATA_DIR="./data"
+$BINARY_PATH &
 
 # Wait for the database to be fully up
 sleep 10
